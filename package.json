@@ -1,0 +1,22 @@
+{
+  "name": "elctrn",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "build --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "elctrn",
+    "win": {
+      "target": "portable",
+      "icon": "images/radio.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^9.0.2",
+    "electron-builder": "^22.7.0"
+  },
+  "dependencies": {}
+}

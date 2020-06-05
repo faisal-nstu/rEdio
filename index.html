@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Symphony 92.4 FM</title>
+    <!-- https://electronjs.org/docs/tutorial/security#csp-meta-tag -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/loaders.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <audio
+      id="radio"
+      src="https://playerservices.streamtheworld.com/api/livestream-redirect/symphony924aac.aac"
+    ></audio>
+
+    <div class="container">
+      <div class="row titlebar">
+        <span class="title">SYMPHONY 92.4</span>
+        <div class="ml-auto btn-group">
+          <button class="btn titlebar-button" id="settings-btn">
+            <!-- ⚙️ -->
+            <img src="images/settings.png">
+          </button>
+          <button class="btn titlebar-button" id="min-btn">
+            <!-- 🢃 -->
+            <!-- — -->
+            –
+          </button>
+          <button class="btn titlebar-button" id="exit-btn">
+            <!-- ☠ -->
+            🞩
+          </button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          id="loadingAnim"
+          hidden
+          class="loader-inner line-scale-pulse-out"
+          style="opacity: 0.5; position: absolute; top: 60px; left: 115px;"
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <img
+          src="images/paused.png"
+          style="
+            width: 100%;
+            opacity: 0.2;
+            position: relative;
+            top: 0;
+            left: 0;
+          "
+        />
+        <img
+          id="visualizer"
+          src="images/wave.gif"
+          hidden
+          style="
+            width: 100%;
+            opacity: 0.2;
+            position: absolute;
+            top: 35px;
+            left: 0px;
+          "
+        />
+      </div>
+
+      <div class="row">
+        <button class="btn play-btn" id="playBtn" onclick="playPause()">
+          ⯈
+        </button>
+      </div>
+    </div>
+
+    <script src="scripts/radio.js"></script>
+  </body>
+</html>
