@@ -71,31 +71,28 @@ body {
 #min-btn {
   color: #6c757d;
 }
-/* 
-.min-btn:hover {
-  background: #6c757d;
-  color: white;
-} */
 
 #exit-btn {
   color: #dc3545;
 }
-/* 
-.exit-btn:hover {
-  background: #dc3545;
-  color: white;
-} */
-#min-btn {
+
+#min-btn:hover {
+  /* background: #6c757d;
+  color: white; */
   text-shadow: 0 0 8px #fff, 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #fff,
     0 0 17px #fff;
 }
 
-#exit-btn {
+#exit-btn:hover {
+  /* background: #dc3545;
+  color: white; */
   text-shadow: 0 0 8px #fff, 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #fff;
 }
 
 #settings-btn > img {
   width: 15px;
-  
+}
+
+#settings-btn > img:hover {
   filter: drop-shadow(0px 0px 5px #fff);
 }
