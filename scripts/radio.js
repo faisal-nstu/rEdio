@@ -3,8 +3,8 @@ const remote = require('electron').remote;
 playing = false;
 player = document.getElementById('radio');
 playBtn = document.getElementById('playBtn');
-visualizer = document.getElementById('visualizer');
-loadingAnim = document.getElementById('loadingAnim');
+analyzer = document.getElementById('analyzer');
+loadingAnim = document.getElementById('loading-anim');
 
 playPause = function () {
   if (playing) {
@@ -28,10 +28,10 @@ document.getElementById("exit-btn").addEventListener("click", function (e) {
 });
 
 player.addEventListener("playing", function (e) {
-  visualizer.hidden = false;
+  analyzer.hidden = false;
   loadingAnim.hidden = true;
 });
 
 player.addEventListener("pause", function (e) {
-  visualizer.hidden = true;
+  analyzer.hidden = true;
 });

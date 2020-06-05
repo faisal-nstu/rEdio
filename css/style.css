@@ -69,7 +69,7 @@ body {
 }
 
 #min-btn {
-  color: #6c757d;
+  color: #008eff;
 }
 
 #exit-btn {
@@ -77,16 +77,16 @@ body {
 }
 
 #min-btn:hover {
-  /* background: #6c757d;
-  color: white; */
-  text-shadow: 0 0 8px #fff, 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #fff,
-    0 0 17px #fff;
+  color: #70bfff;
+  /* background: #6c757d; */
+  text-shadow: 0 0 3px #008eff, 0 0 6px #008eff, 0 0 7px #008eff,
+    0 0 8px #008eff, 0 0 9px #008eff, 0 0 10px #008eff, 0 0 11px #008eff,
+    0 0 13px #008eff, 0 0 15px #008eff;
 }
 
 #exit-btn:hover {
-  /* background: #dc3545;
-  color: white; */
-  text-shadow: 0 0 8px #fff, 0 0 10px #fff, 0 0 12px #fff, 0 0 15px #fff;
+  color: #ff929d;
+  text-shadow: 0 0 8px #f00, 0 0 10px #f00, 0 0 12px #f00, 0 0 15px #f00;
 }
 
 #settings-btn > img {
@@ -94,5 +94,23 @@ body {
 }
 
 #settings-btn > img:hover {
-  filter: drop-shadow(0px 0px 5px #fff);
+  filter: drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.486));
+}
+
+.visual {
+  width: 100%;
+  opacity: 0.2;
+}
+
+.analyzer {
+  position: absolute;
+  top: 35px;
+  left: 0px;
+}
+
+#loading-anim {
+  opacity: 0.5;
+  position: absolute;
+  top: 60px;
+  left: 115px;
 }

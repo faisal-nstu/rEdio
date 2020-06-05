@@ -23,17 +23,19 @@
       <div class="row titlebar">
         <span class="title">SYMPHONY 92.4</span>
         <div class="ml-auto btn-group">
-          <button class="btn titlebar-button" id="settings-btn">
-            <!-- ⚙️ -->
-            <img src="images/settings.png">
-          </button>
+          <!-- ⚙️ -->
+          <!-- <button class="btn titlebar-button" id="settings-btn">
+            <img src="images/settings.png" />
+          </button> -->
+
+          <!-- 🢃 -->
+          <!-- — -->
           <button class="btn titlebar-button" id="min-btn">
-            <!-- 🢃 -->
-            <!-- — -->
             –
           </button>
+
+          <!-- ☠ -->
           <button class="btn titlebar-button" id="exit-btn">
-            <!-- ☠ -->
             🞩
           </button>
         </div>
@@ -41,10 +43,9 @@
 
       <div class="row">
         <div
-          id="loadingAnim"
+          id="loading-anim"
           hidden
           class="loader-inner line-scale-pulse-out"
-          style="opacity: 0.5; position: absolute; top: 60px; left: 115px;"
         >
           <div></div>
           <div></div>
@@ -54,26 +55,14 @@
         </div>
 
         <img
+          class="visual"
           src="images/paused.png"
-          style="
-            width: 100%;
-            opacity: 0.2;
-            position: relative;
-            top: 0;
-            left: 0;
-          "
         />
         <img
-          id="visualizer"
+          id="analyzer"
+          class="visual analyzer"
           src="images/wave.gif"
           hidden
-          style="
-            width: 100%;
-            opacity: 0.2;
-            position: absolute;
-            top: 35px;
-            left: 0px;
-          "
         />
       </div>
 
