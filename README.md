@@ -1,2 +1,2 @@
 # rEdio
-A desktop app on electron platform.
+A desktop radio in progress using electron platform.
