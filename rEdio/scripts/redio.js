@@ -1,27 +1,27 @@
-const remote = require('electron').remote;
+const remote = require("electron").remote;
 
 playing = false;
-player = document.getElementById('radio');
-playBtn = document.getElementById('play-btn');
-pausedBg = document.getElementById('paused-bg');
-analyzer = document.getElementById('analyzer');
-loadingAnim = document.getElementById('loading-anim');
+player = document.getElementById("radio");
+playBtn = document.getElementById("play-btn");
+pausedBg = document.getElementById("paused-bg");
+analyzer = document.getElementById("analyzer");
+loadingAnim = document.getElementById("loading-anim");
 
 playPause = function () {
   if (playing) {
     player.pause();
-    playBtn.innerHTML = '⯈';
+    playBtn.innerHTML = "⯈";
   } else {
     player.play();
-    playBtn.innerHTML = '❚❚';
+    playBtn.innerHTML = "❚❚";
     loadingAnim.hidden = false;
   }
   playing = !playing;
-}
+};
 
 document.getElementById("min-btn").addEventListener("click", function (e) {
   var window = remote.getCurrentWindow();
-  window.minimize(); 
+  window.minimize();
 });
 
 document.getElementById("exit-btn").addEventListener("click", function (e) {
@@ -30,8 +30,8 @@ document.getElementById("exit-btn").addEventListener("click", function (e) {
 
 player.addEventListener("playing", function (e) {
   analyzer.hidden = false;
-  loadingAnim.hidden = true;
   pausedBg.hidden = true;
+  loadingAnim.hidden = true;
 });
 
 player.addEventListener("pause", function (e) {
