@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/loaders.min.css" />
+    <link rel="stylesheet" href="css/style2.css" />
+  </head>
+  <body>
+    <audio
+      id="radio"
+      src="https://playerservices.streamtheworld.com/api/livestream-redirect/symphony924aac.aac"
+    ></audio>
+    <main>
+      <section id="title-bar">
+        <span id="title">SYMPHONY 92.4</span>
+        <div class="btn-group" style="margin-left: auto !important;">
+          <!-- ⚙️ -->
+          <!-- <button class="btn titlebar-button" id="settings-btn">
+            <img src="images/settings.png" />
+          </button> -->
+
+          <!-- 🢃 -->
+          <!-- — -->
+          <span class="btn titlebar-button" id="min-btn">
+            –
+          </span>
+
+          <!-- ☠ -->
+          <span class="btn titlebar-button" id="exit-btn">
+            🞩
+          </span>
+        </div>
+      </section>
+
+      <section id="visuals">
+        <div id="loading-anim" class="loader-inner line-scale-pulse-out" hidden>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <img id="paused-bg" class="visual" src="images/paused2.png" />
+        <img id="analyzer" class="visual" src="images/wave2.gif" hidden />
+      </section>
+
+      <section id="controls">
+        <button id="play-btn" class="btn" onclick="playPause()">
+          ⯈
+        </button>
+      </section>
+    </main>
+
+    <script src="scripts/redio2.js"></script>
+  </body>
+</html>
