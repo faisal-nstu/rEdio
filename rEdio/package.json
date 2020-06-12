@@ -11,7 +11,7 @@
     "appId": "rEdio",
     "win": {
       "target": "portable",
-      "icon": "images/radio.ico"
+      "icon": "images/redio.ico"
     }
   },
   "devDependencies": {

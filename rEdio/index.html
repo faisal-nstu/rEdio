@@ -41,12 +41,8 @@
         </div>
       </div>
 
-      <div class="row">
-        <div
-          id="loading-anim"
-          hidden
-          class="loader-inner line-scale-pulse-out"
-        >
+      <div class="row" id="display">
+        <div id="loading-anim" hidden class="loader-inner line-scale-pulse-out">
           <div></div>
           <div></div>
           <div></div>
@@ -54,25 +50,22 @@
           <div></div>
         </div>
 
-        <img
-          class="visual"
-          src="images/paused.png"
-        />
+        <img class="visual" id="paused-bg" src="images/paused2.png" />
         <img
           id="analyzer"
-          class="visual analyzer"
-          src="images/wave.gif"
+          class="visual"
+          src="images/wave2.gif"
           hidden
         />
       </div>
 
-      <div class="row">
-        <button class="btn play-btn" id="playBtn" onclick="playPause()">
+      <div class="row" >
+        <button class="btn play-btn" id="play-btn" onclick="playPause()">
           ⯈
         </button>
       </div>
     </div>
 
-    <script src="scripts/radio.js"></script>
+    <script src="scripts/redio.js"></script>
   </body>
 </html>
