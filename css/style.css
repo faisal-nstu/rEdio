@@ -68,6 +68,10 @@ section {
   opacity: 0.5;
 }
 
+.fit {
+  object-fit: cover;
+}
+
 #control-section {
   grid-row-start: 3;
   grid-row-end: 3;
