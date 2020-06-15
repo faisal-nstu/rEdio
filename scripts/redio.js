@@ -44,5 +44,5 @@ player.addEventListener("pause", function (e) {
 });
 
 player.addEventListener("error", function (e) {
-  alert(e);
+  // alert(e);
 });
