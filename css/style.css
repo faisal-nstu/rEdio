@@ -68,9 +68,11 @@ section {
   opacity: 0.5;
 }
 
-#controls {
+#control-section {
   grid-row-start: 3;
   grid-row-end: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .btn {
@@ -111,14 +113,46 @@ section {
     0 0 14px #f00, 0 0 15px #f00;
 }
 
-#play-btn {
+#control-section .btn {
   color: #00ffb377;
+  
+  /* outline: 1px dashed rgba(255, 255, 255, 0.295);
+  outline-offset: -1px; */
 }
 
-#play-btn:hover {
+#control-section .btn:hover {
   color: #00ffb3;
   text-shadow: 0 0 10px #00ffb3, 0 0 11px #00ffb3, 0 0 13px #00ffb3,
     0 0 15px #00ffb3;
+}
+
+#prev-btn {
+  grid-column: 1/2;
+  text-align: end;
+  right: 0;
+}
+
+#prev-btn .tooltiptext {
+  right: 0;
+}
+
+#play-btn {
+  grid-column: 2/3;
+}
+
+#play-btn .tooltiptext {
+  width: 80px;
+  left: 50%;
+  margin-left: -40px;
+}
+
+#next-btn {
+  grid-column: 3/-1;
+  text-align: start;
+}
+
+#next-btn .tooltiptext {
+  left: 0;
 }
 
 #loading-anim {
@@ -135,7 +169,6 @@ section {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
   color: #fff;
   text-align: center;
   border-radius: 6px;
@@ -143,8 +176,6 @@ section {
   position: absolute;
   z-index: 1;
   bottom: 150%;
-  left: 50%;
-  margin-left: -60px;
 }
 
 .tooltip:hover .tooltiptext {

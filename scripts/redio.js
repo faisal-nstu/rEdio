@@ -19,8 +19,17 @@ playPause = function () {
   playing = !playing;
 };
 
-document.addEventListener('DOMContentLoaded', function() {
-  player.src="https://playerservices.streamtheworld.com/api/livestream-redirect/symphony924aac.aac";
+prev = function () {
+  // go to previous channel
+};
+
+next = function () {
+  // go to next channel
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  player.src =
+    "https://playerservices.streamtheworld.com/api/livestream-redirect/symphony924aac.aac";
 });
 
 document.getElementById("min-btn").addEventListener("click", function (e) {
