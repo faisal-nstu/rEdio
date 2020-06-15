@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <audio
-      id="radio"
-      src="https://playerservices.streamtheworld.com/api/livestream-redirect/symphony924aac.aac"
-    ></audio>
+    <audio id="radio"></audio>
     <main>
       <section id="title-bar">
         <span id="title">SYMPHONY 92.4</span>
@@ -49,7 +46,8 @@
       </section>
 
       <section id="controls">
-        <button id="play-btn" class="btn" onclick="playPause()">
+        <button id="play-btn" class="btn tooltip" onclick="playPause()">
+          <span class="tooltiptext">PLAY</span>
           ⯈
         </button>
       </section>

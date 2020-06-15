@@ -10,14 +10,18 @@ loadingAnim = document.getElementById("loading-anim");
 playPause = function () {
   if (playing) {
     player.pause();
-    playBtn.innerHTML = "⯈";
+    playBtn.innerHTML = `<span class="tooltiptext">PLAY</span>⯈`;
   } else {
     player.play();
-    playBtn.innerHTML = "❚❚";
+    playBtn.innerHTML = `<span class="tooltiptext">PAUSE</span>❚❚`;
     loadingAnim.hidden = false;
   }
   playing = !playing;
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+  player.src="https://playerservices.streamtheworld.com/api/livestream-redirect/symphony924aac.aac";
+});
 
 document.getElementById("min-btn").addEventListener("click", function (e) {
   var window = remote.getCurrentWindow();
@@ -37,4 +41,8 @@ player.addEventListener("playing", function (e) {
 player.addEventListener("pause", function (e) {
   analyzer.hidden = true;
   pausedBg.hidden = false;
+});
+
+player.addEventListener("error", function (e) {
+  alert(e);
 });
