@@ -7,9 +7,13 @@ playBtn = document.getElementById("play-btn");
 pausedBg = document.getElementById("paused-bg");
 analyzer = document.getElementById("analyzer");
 loadingAnim = document.getElementById("loading-anim");
-count = 0;
+title = document.getElementById("title");
+stationIndex = 0;
 
-playPause = function () {
+function playPause() {
+  const station = stations[stationIndex];
+  title.innerHTML = station.name;
+
   if (playing) {
     player.pause();
     playBtn.innerHTML = `<span class="tooltiptext">PLAY</span>⯈`;
@@ -21,26 +25,34 @@ playPause = function () {
   playing = !playing;
 };
 
-prev = function () {
-  playPause();
-  // go to previous station
-  count--;
-  const station = stations[count];
-  player.src = station.radio_url
-  playPause();
-};
-
-next = function () {
-  playPause();
-  // go to next station
-  count++;
-  const station = stations[count];
+function setStation(index) {
+  const station = stations[index];
   player.src = station.radio_url;
   analyzer.hidden = true;
   playPause();
+}
+
+function prev() {
+  playPause();
+  // go to previous station
+  stationIndex--;
+  if (stationIndex < 0) {
+    stationIndex = stations.length - 1;
+  }
+  setStation(stationIndex);
 };
 
-showLoader = function(show) {
+function next() {
+  playPause();
+  // go to next station
+  stationIndex++;
+  if (stationIndex === stations.length) {
+    stationIndex = 0;
+  }
+  setStation(stationIndex);
+};
+
+function showLoader(show) {
   pausedBg.hidden = show;
   loadingAnim.hidden = show;
 };
@@ -53,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("min-btn").addEventListener("click", function (e) {
-  var window = remote.getCurrentWindow();
+  const window = remote.getCurrentWindow();
   window.minimize();
 });
 
@@ -62,6 +74,8 @@ document.getElementById("exit-btn").addEventListener("click", function (e) {
 });
 
 player.addEventListener("playing", function (e) {
+  const station = stations[stationIndex];
+  title.innerHTML = station.name;
   analyzer.hidden = false;
   showLoader(true);
 });
@@ -72,6 +86,6 @@ player.addEventListener("pause", function (e) {
 });
 
 player.addEventListener("error", function (e) {
-  alert(e);
+  console.log(JSON.stringify(e));
 });
 

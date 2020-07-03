@@ -96,6 +96,28 @@ section {
   padding: 8px;
 }
 
+#volume-btn img {
+  width: 12px;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+
+#volume-btn img:hover {
+  opacity: 0.8;
+  filter: drop-shadow(0px 0px 0px #fff) drop-shadow(0px 0px 5px #fff);
+}
+
+#settings-btn img {
+  width: 12px;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+
+#settings-btn img:hover {
+  opacity: 0.8;
+  filter: drop-shadow(0px 0px 0px #fff) drop-shadow(0px 0px 5px #fff);
+}
+
 #min-btn {
   color: #008eff;
 }
@@ -119,8 +141,8 @@ section {
 
 #control-section .btn {
   color: #00ffb377;
-  
-  /* outline: 1px dashed rgba(255, 255, 255, 0.295);
+
+  /* outline: 1px dashed rgba(255, 255, 255, 0.1);
   outline-offset: -1px; */
 }
 
@@ -173,7 +195,7 @@ section {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  color: #fff;
+  color: #c4ffed;
   text-align: center;
   border-radius: 6px;
   padding: 5px 0;

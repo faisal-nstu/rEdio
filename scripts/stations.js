@@ -237,7 +237,7 @@ const stations = [
     name: "CarnaticRadio",
     image: "15364.png",
     site_url: "http://www.carnaticradio.com/",
-    radio_url: "http://s5.viastreaming.net:7220/;",
+    radio_url: "http://s5.viastreaming.net:7220",
     description:
       "CarnaticRadio.com has been started by a group of individuals who love Carnatic music and the site is devoted to making Carnatic music available 24x7. This will also be a good entertainment media for the younger generation who have to improve their “Kelvi Gnanam” by listening to performances by various artists.",
   },
