@@ -17,7 +17,7 @@
   cursor: default;
 }
 :root {
-  --orca: #f7b72d; 
+  --orca: #f7b72d;
 }
 body {
   background: #0f1c23;
@@ -75,8 +75,7 @@ section {
 }
 
 #control-section {
-  grid-row-start: 3;
-  grid-row-end: 3;
+  grid-row: 3/3;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -210,13 +209,35 @@ section {
   visibility: visible;
 }
 
-#volume-slider {
+#volume-section {
   position: absolute;
   z-index: 2;
-  transform: rotate(270deg);
-  top: 75px;
-  max-width: 95px;
-  right: 60px;
+  top: 65px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 9fr 1fr;
+  height: 16px;
+  background: #00000057;
+  box-shadow: 0 0 30px black;
+}
+
+#volume-low {
+  grid-column: 1/2;
+}
+
+#volume-slider {
+  grid-column: 2/3;
+  margin-top: 5px;
+}
+
+#volume-high {
+  grid-column: 3/-1;
+}
+
+.volume-icon img {
+  width: 12px;
+  /* background: blue; */
+  margin: 0 6px;
 }
 
 input[type="range"] {
@@ -235,11 +256,11 @@ input[type="range"]::-webkit-slider-thumb {
   background: #088666;
   cursor: pointer;
   margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: -80px 0 0 80px #00ffb3;
+  box-shadow: -120px 0 0 120px #00ffb3;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-  background: #00ffb3;;
+  background: #00ffb3;
   box-shadow: 0 0 10px #00ffb3, 0 0 11px #00ffb3, 0 0 13px #00ffb3,
     0 0 15px #00ffb3, -80px 0 0 80px #00ffb3;
 }

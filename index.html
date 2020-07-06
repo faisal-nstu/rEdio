@@ -1,80 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/loaders.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <audio id="radio"></audio>
-    <main>
-      <section id="title-bar">
-        <span id="title">rEdio</span>
-        <div class="btn-group" style="margin-left: auto !important;">
-          <span class="btn titlebar-button" id="volume-btn">
-            <img src="images/volume4.png" />
-          </span>
-          <!-- ⚙️ 🔇 🔈 🔉 🔊 🢃 — ☠ -->
-          <span class="btn titlebar-button" id="settings-btn">
-            <img src="images/settings.png" />
-          </span>
 
-          <span class="btn titlebar-button" id="min-btn">
-            –
-          </span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/loaders.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
 
-          <span class="btn titlebar-button" id="exit-btn">
-            🞩
-          </span>
-        </div>
-      </section>
+<body>
+  <audio id="radio"></audio>
+  <main>
+    <section id="title-bar">
+      <span id="title">rEdio</span>
+      <div class="btn-group" style="margin-left: auto !important;">
+        <span class="btn titlebar-button" id="volume-btn">
+          <img src="images/volume4.png" />
+        </span>
+        <!-- ⚙️ 🔇 🔈 🔉 🔊 🢃 — ☠ -->
+        <span class="btn titlebar-button" id="settings-btn">
+          <img src="images/settings.png" />
+        </span>
 
-      <section id="visuals">
-        <input type="range" id="volume-slider" min="0" max="100" hidden/>
-        <div id="loading-anim" class="loader-inner line-scale-pulse-out" hidden>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
+        <span class="btn titlebar-button" id="min-btn">
+          –
+        </span>
 
-        <img
-          id="paused-bg"
-          class="visual"
-          src="images/paused.png"
-          ondblclick="playPause()"
-        />
-        <img
-          id="analyzer"
-          class="visual"
-          src="images/analyzer.gif"
-          ondblclick="playPause()"
-          hidden
-        />
-      </section>
+        <span class="btn titlebar-button" id="exit-btn">
+          🞩
+        </span>
+      </div>
+    </section>
 
-      <section id="control-section">
-        <button id="prev-btn" class="btn tooltip" onclick="prev()">
-          <span class="tooltiptext">PREV</span>
-          ❚⯇
-        </button>
+    <section id="visuals">
+      <div id="volume-section">
+        <span id="volume-low" class="volume-icon">
+          <img src="images/volume4.png" />
+        </span>
+        <input type="range" id="volume-slider"min="0" max="100" />
+        <span id="volume-high" class="volume-icon">
+          <img src="images/volume4.png" />
+        </span>
+      </div>
 
-        <button id="play-btn" class="btn tooltip" onclick="playPause()">
-          <span class="tooltiptext">PLAY</span>
-          ⯈
-        </button>
+      <div id="loading-anim" class="loader-inner line-scale-pulse-out" hidden>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
 
-        <button id="next-btn" class="btn tooltip" onclick="next()">
-          <span class="tooltiptext">NEXT</span>
-          ⯈❚
-        </button>
-      </section>
-    </main>
+      <img id="paused-bg" class="visual" src="images/paused.png" ondblclick="playPause()" />
+      <img id="analyzer" class="visual" src="images/analyzer.gif" ondblclick="playPause()" hidden />
+    </section>
 
-    <script src="scripts/redio.js"></script>
-  </body>
+    <section id="control-section">
+      <button id="prev-btn" class="btn tooltip" onclick="prev()">
+        <span class="tooltiptext">PREV</span>
+        ❚⯇
+      </button>
+
+      <button id="play-btn" class="btn tooltip" onclick="playPause()">
+        <span class="tooltiptext">PLAY</span>
+        ⯈
+      </button>
+
+      <button id="next-btn" class="btn tooltip" onclick="next()">
+        <span class="tooltiptext">NEXT</span>
+        ⯈❚
+      </button>
+    </section>
+  </main>
+
+  <script src="scripts/redio.js"></script>
+</body>
+
 </html>
