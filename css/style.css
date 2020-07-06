@@ -210,7 +210,6 @@ section {
 
 #vloumeSlider {
   position: absolute;
-  display: none;
   z-index: 2;
   transform: rotate(270deg);
   top: 75px;
@@ -220,26 +219,27 @@ section {
 
 input[type="range"] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
-  height: 1px;
+  height: 5px;
   cursor: pointer;
-  background: #7c8e98;
+  background: #ffffff28;
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 12px;
-  width: 12px;
-  border-radius: 6px;
+  height: 5px;
+  width: 5px;
   background: #088666;
   cursor: pointer;
   margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: -80px 0 0 80px #00ffb3;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
   background: #00ffb3;;
   box-shadow: 0 0 10px #00ffb3, 0 0 11px #00ffb3, 0 0 13px #00ffb3,
-    0 0 15px #00ffb3;
+    0 0 15px #00ffb3, -80px 0 0 80px #00ffb3;
 }
 
 input[type="range"]:focus {
