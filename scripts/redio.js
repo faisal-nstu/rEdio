@@ -8,6 +8,8 @@ pausedBg = document.getElementById("paused-bg");
 analyzer = document.getElementById("analyzer");
 loadingAnim = document.getElementById("loading-anim");
 title = document.getElementById("title");
+volumeBtn = document.getElementById("volume-btn");
+volumeSlider = document.getElementById("volume-slider");
 stationIndex = 0;
 
 function playPause() {
@@ -89,3 +91,13 @@ player.addEventListener("error", function (e) {
   console.log(JSON.stringify(e));
 });
 
+volumeBtn.addEventListener("click", function (e) {
+  if (!volumeSlider.hidden) {
+    volumeSlider.value = player.volume * 100;
+  }
+  volumeSlider.hidden = !volumeSlider.hidden;
+});
+
+volumeSlider.onchange = function () {
+  player.volume = this.value / 100;
+}

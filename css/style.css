@@ -16,7 +16,9 @@
   -webkit-app-region: no-drag;
   cursor: default;
 }
-
+:root {
+  --orca: #f7b72d; 
+}
 body {
   background: #0f1c23;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -208,7 +210,7 @@ section {
   visibility: visible;
 }
 
-#vloumeSlider {
+#volume-slider {
   position: absolute;
   z-index: 2;
   transform: rotate(270deg);

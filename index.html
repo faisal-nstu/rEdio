@@ -16,7 +16,6 @@
         <div class="btn-group" style="margin-left: auto !important;">
           <span class="btn titlebar-button" id="volume-btn">
             <img src="images/volume4.png" />
-            <input type="range" id="vloumeSlider" value="10"/>
           </span>
           <!-- ⚙️ 🔇 🔈 🔉 🔊 🢃 — ☠ -->
           <span class="btn titlebar-button" id="settings-btn">
@@ -34,6 +33,7 @@
       </section>
 
       <section id="visuals">
+        <input type="range" id="volume-slider" min="0" max="100" hidden/>
         <div id="loading-anim" class="loader-inner line-scale-pulse-out" hidden>
           <div></div>
           <div></div>
