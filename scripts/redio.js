@@ -1,6 +1,9 @@
 const remote = require("electron").remote;
 const stations = require("./scripts/stations");
 
+const volumeImage = 'images/volume.png';
+const muteImage = 'images/mute.png';
+
 playing = false;
 player = document.getElementById("radio");
 playBtn = document.getElementById("play-btn");
@@ -11,8 +14,11 @@ title = document.getElementById("title");
 volumeBtn = document.getElementById("volume-btn");
 volumeSlider = document.getElementById("volume-slider");
 volumeSection = document.getElementById("volume-section");
+volumeIcon = document.getElementById("volume-icon");
+
 stationIndex = 0;
 currentVolume = 0;
+clicks = 0;
 
 function playPause() {
   const station = stations[stationIndex];
@@ -93,7 +99,25 @@ player.addEventListener("error", function (e) {
   console.log(JSON.stringify(e));
 });
 
+player.addEventListener("volumechange", function (e) {
+  volumeIcon.src = this.volume > 0 ? volumeImage : muteImage;
+});
+
 volumeBtn.addEventListener("click", function (e) {
+  clicks++;
+  if (clicks == 1) {
+    setTimeout(function () {
+      if (clicks == 1) {
+        volumeBtnSingleClick();
+      } else {
+        volumeBtnDoubleClick();
+      }
+      clicks = 0;
+    }, 300);
+  }
+});
+
+function volumeBtnSingleClick() {
   const display = getComputedStyle(volumeSection, null).display;
   if (display === 'none') {
     volumeSlider.value = player.volume * 100;
@@ -101,23 +125,19 @@ volumeBtn.addEventListener("click", function (e) {
   } else {
     volumeSection.style.display = 'none';
   }
-});
+}
 
-volumeSlider.onchange = function () {
-  player.volume = this.value / 100;
-  currentVolume = player.volume;
-};
-
-
-document.getElementById("volume-low").addEventListener("click", function (e) {
-  if(player.volume > 0) {
+function volumeBtnDoubleClick() {
+  if (player.volume > 0) {
+    currentVolume = player.volume;
     player.volume = 0;
   } else {
     player.volume = currentVolume;
   }
   volumeSlider.value = player.volume * 100;
-});
+}
 
-document.getElementById("volume-high").addEventListener("click", function (e) {
-  player.volume = 1;
-});
+volumeSlider.onchange = function () {
+  player.volume = this.value / 100;
+  currentVolume = player.volume;
+};

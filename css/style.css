@@ -216,7 +216,7 @@ section {
   top: 65px;
   width: 100%;
   display: none;
-  grid-template-columns: 1fr 9fr 1fr;
+  grid-template-columns: 2fr 18fr 2fr;
   height: 16px;
   background: #00000057;
   box-shadow: 0 0 30px black;
@@ -227,22 +227,13 @@ section {
   box-shadow: 140px 0 30px var(--controlbuttonglow), -140px 0 30px var(--controlbuttonglow);
 }
 
-#volume-low {
-  grid-column: 1/2;
-}
-
 #volume-slider {
   grid-column: 2/3;
   margin-top: 5px;
 }
 
-#volume-high {
-  grid-column: 3/-1;
-}
-
 .volume-icon img {
   width: 12px;
-  /* background: blue; */
   margin: 0 6px;
 }
 
