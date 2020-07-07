@@ -10,7 +10,9 @@ loadingAnim = document.getElementById("loading-anim");
 title = document.getElementById("title");
 volumeBtn = document.getElementById("volume-btn");
 volumeSlider = document.getElementById("volume-slider");
+volumeSection = document.getElementById("volume-section");
 stationIndex = 0;
+currentVolume = 0;
 
 function playPause() {
   const station = stations[stationIndex];
@@ -92,12 +94,30 @@ player.addEventListener("error", function (e) {
 });
 
 volumeBtn.addEventListener("click", function (e) {
-  if (!volumeSlider.hidden) {
+  const display = getComputedStyle(volumeSection, null).display;
+  if (display === 'none') {
     volumeSlider.value = player.volume * 100;
+    volumeSection.style.display = 'grid';
+  } else {
+    volumeSection.style.display = 'none';
   }
-  volumeSlider.hidden = !volumeSlider.hidden;
 });
 
 volumeSlider.onchange = function () {
   player.volume = this.value / 100;
-}
+  currentVolume = player.volume;
+};
+
+
+document.getElementById("volume-low").addEventListener("click", function (e) {
+  if(player.volume > 0) {
+    player.volume = 0;
+  } else {
+    player.volume = currentVolume;
+  }
+  volumeSlider.value = player.volume * 100;
+});
+
+document.getElementById("volume-high").addEventListener("click", function (e) {
+  player.volume = 1;
+});

@@ -17,7 +17,7 @@
   cursor: default;
 }
 :root {
-  --orca: #f7b72d;
+  --controlbuttonglow: #00ffb3;
 }
 body {
   background: #0f1c23;
@@ -148,9 +148,10 @@ section {
 }
 
 #control-section .btn:hover {
-  color: #00ffb3;
-  text-shadow: 0 0 10px #00ffb3, 0 0 11px #00ffb3, 0 0 13px #00ffb3,
-    0 0 15px #00ffb3;
+  color: var(--controlbuttonglow);
+  text-shadow: 0 0 10px var(--controlbuttonglow),
+    0 0 11px var(--controlbuttonglow), 0 0 13px var(--controlbuttonglow),
+    0 0 15px var(--controlbuttonglow);
 }
 
 #prev-btn {
@@ -214,11 +215,16 @@ section {
   z-index: 2;
   top: 65px;
   width: 100%;
-  display: grid;
+  display: none;
   grid-template-columns: 1fr 9fr 1fr;
   height: 16px;
   background: #00000057;
   box-shadow: 0 0 30px black;
+}
+
+#volume-section:hover {
+  background: #00ffb35c;
+  box-shadow: 140px 0 30px var(--controlbuttonglow), -140px 0 30px var(--controlbuttonglow);
 }
 
 #volume-low {
@@ -256,14 +262,15 @@ input[type="range"]::-webkit-slider-thumb {
   background: #088666;
   cursor: pointer;
   margin-top: 0px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: -120px 0 0 120px #00ffb3;
+  box-shadow: -120px 0 0 120px var(--controlbuttonglow);
 }
 
-input[type="range"]::-webkit-slider-thumb:hover {
-  background: #00ffb3;
-  box-shadow: 0 0 10px #00ffb3, 0 0 11px #00ffb3, 0 0 13px #00ffb3,
-    0 0 15px #00ffb3, -80px 0 0 80px #00ffb3;
-}
+/* input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--controlbuttonglow);
+  box-shadow: 0 0 10px var(--controlbuttonglow),
+    0 0 11px var(--controlbuttonglow), 0 0 13px var(--controlbuttonglow),
+    0 0 15px var(--controlbuttonglow), -120px 0 0 120px var(--controlbuttonglow);
+} */
 
 input[type="range"]:focus {
   outline: none;
